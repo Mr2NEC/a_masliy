@@ -51,7 +51,7 @@
       </header>
       <main id="main">
         <div class="container">
-          <div class="cite_container">
+          <div class="cite_container" id="first-blockquote">
             <div class="image_container"></div>
             <div class="blockquote-wrapper">
               <div class="blockquote-container">
@@ -64,7 +64,7 @@
           </div>
         </div>
         <div class="container">
-          <div class="text_wrapper">
+          <div class="text_wrapper" id="contacting_psychologist_text">
             <div class="text_container">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -83,13 +83,58 @@
             </div>
           </div>
         </div>
-        <div class="container"></div>
-        <div class="container"></div>
-        <div class="container"></div>
-        <div class="container"></div>
-        <div class="container"></div>
         <div class="container">
-          <div class="accordion_wrapper">
+          <div id="about_me"></div>
+        </div>
+        <div class="container">
+          <div id="specialization_text"></div>
+        </div>
+        <div class="container">
+          <div id="second-blockquote"></div>
+        </div>
+        <div class="container">
+          <div class="card_wrapper" id="price">
+            <!-- these radio buttons hold state of which card is in front and which toggle button is visible -->
+            <input type="radio" name="sushi-lunch" id="happy-radio" />
+            <input type="radio" name="sushi-lunch" id="lovers-radio" checked />
+
+            <div class="selector">
+              <label for="happy-radio" class="happy-card">
+                <h1>Happy Sushi Lunch</h1>
+                <ul>
+                  <li>California Roll</li>
+                  <li>2 Pieces Salmon Nigiri</li>
+                  <li>Sea Salt Edamame</li>
+                  <li>Miso Soup</li>
+                </ul>
+                <p>$12</p>
+              </label>
+
+              <label for="lovers-radio" class="lovers-card">
+                <h1>Sushi Lover's Lunch</h1>
+                <ul>
+                  <li>Spicy Tuna Roll</li>
+                  <li>Shrimp Tempura Roll</li>
+                  <li>4 Pieces Asssorted Nigiri</li>
+                  <li>Wonton Soup</li>
+                </ul>
+                <p>$18</p>
+              </label>
+
+              <label for="happy-radio" class="happy-pick"
+                >Switch to Happy Sushi Lunch!</label
+              >
+              <label for="lovers-radio" class="lovers-pick"
+                >Switch to Sushi Lover's Lunch!</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div id="comments"></div>
+        </div>
+        <div class="container">
+          <div class="accordion_wrapper" id="FAQ">
             <div class="accordion">
               <div class="tab">
                 <input type="radio" id="tab1" name="tab-group" />
@@ -131,12 +176,15 @@
             </div>
           </div>
         </div>
-        <div class="container"></div>
-        <div class="container"></div>
-        <div class="container"></div>
-        <div class="container"></div>
-        <div class="container"></div>
-        <div class="container"></div>
+        <div class="container">
+          <div id="about_consultation"></div>
+        </div>
+        <div class="container">
+          <div id="image_full"></div>
+        </div>
+        <div class="container">
+          <div id="contacts"></div>
+        </div>
       </main>
       <footer id="footer"></footer>
     </div>
