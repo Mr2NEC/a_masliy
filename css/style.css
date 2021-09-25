@@ -11,6 +11,11 @@ a {
   text-decoration: none;
 }
 
+input,
+textarea {
+  outline: none;
+}
+
 #wrapper {
   width: 100%;
   overflow: hidden;
@@ -370,7 +375,8 @@ a {
   margin: 0 -20px -20px;
   padding: 15px;
   background-color: #bdd6d2;
-  font-weight: bold;font-size: 1.7rem;
+  font-weight: bold;
+  font-size: 1.7rem;
 
   text-align: center;
 }
@@ -391,7 +397,6 @@ a {
 .happy-pick::before,
 .lovers-pick::after {
   display: inline-block;
-  font-family: "Font Awesome 5 Free";
   font-weight: bold;
 }
 
@@ -413,6 +418,62 @@ a {
 /* hide lover's toggle button if lover's is currently selected */
 #lovers-radio:checked ~ .selector .lovers-pick {
   display: none;
+}
+
+.comments-singler-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_slider {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.single-item {
+  width: calc(100% - 100px);
+}
+.single-item img {
+  width: 100%;
+  max-width: 350px;
+  height: 350px;
+  object-fit: contain;
+
+  padding: 5px;
+}
+#my-arrow-prev,
+#my-arrow-next {
+  display: flex;
+  z-index: 1;
+}
+#my-arrow-prev {
+  order: -1;
+}
+.main_slider span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5b6ceb;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  position: relative;
+}
+.main_slider span:hover {
+  background: #5b6ceb;
+  color: #ffffff;
+}
+#my-arrow-prev span {
+  left: 50%;
+}
+#my-arrow-next span {
+  right: 50%;
 }
 
 .tab input,
@@ -451,6 +512,114 @@ a {
 .tab :checked ~ .tab-content {
   display: block; /* Показываем содержимое */
 }
+
+#contacts {
+  display: flex;
+  flex-direction: row;
+}
+
+.contacts-info-wrapper,
+.contacts-form-wrapper {
+  display: flex;
+  max-width: 50%;
+  width: 100%;
+  padding: 30px;
+}
+
+.contacts-form-wrapper h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.contacts-form-wrapper form {
+  position: relative;
+  width: 100%;
+  border-radius: 30px;
+  background: #fff;
+}
+.form-left-decoration,
+.form-right-decoration {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  border-radius: 20px;
+}
+.form-left-decoration {
+  bottom: 60px;
+  left: -30px;
+}
+.form-right-decoration {
+  top: 60px;
+  right: -30px;
+}
+.form-left-decoration:before,
+.form-left-decoration:after,
+.form-right-decoration:before,
+.form-right-decoration:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  border-radius: 30px;
+  background: #fff;
+}
+.form-left-decoration:before {
+  top: -20px;
+}
+.form-left-decoration:after {
+  top: 20px;
+  left: 10px;
+}
+.form-right-decoration:before {
+  top: -20px;
+  right: 0;
+}
+.form-right-decoration:after {
+  top: 20px;
+  right: 10px;
+}
+.circle {
+  position: absolute;
+  bottom: 80px;
+  left: -55px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+}
+.form-inner {
+  padding: 40px;
+}
+.form-inner input,
+.form-inner textarea {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 20px;
+  background: #d0dfe8;
+}
+.form-inner textarea {
+  resize: none;
+}
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 20px;
+  border: none;
+  border-bottom: 4px solid #3e4f24;
+  background: #5a7233;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+button:hover {
+  background: #3e4f24;
+}
+
 @media (max-width: 1399px) {
   .container {
     padding: 20px 15px;

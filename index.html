@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="css/slick-theme.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Document</title>
   </head>
@@ -23,27 +26,27 @@
               <img src="images/logoAMasliy.png" alt="A. Masliy Logo" />
             </a>
           </div>
-          <nav class="main-nav hamburger-menu">
+          <nav class="main-nav hamburger-menu" id="main-nav">
             <input id="menu__toggle" type="checkbox" />
             <label class="menu__btn" for="menu__toggle">
               <span></span>
             </label>
             <ul class="menu__box">
               <li>
-                <a class="menu__item" href="#">Specialization</a>
+                <a class="menu__item" href="#">Направление и Специализация</a>
               </li>
-              <li><a class="menu__item" href="#">Rules</a></li>
+              <li><a class="menu__item" href="#">Обо мне</a></li>
               <li>
-                <a class="menu__item" href="#">About me</a>
-              </li>
-              <li>
-                <a class="menu__item" href="#">Price</a>
+                <a class="menu__item" href="#price">Услуги и Цены</a>
               </li>
               <li>
-                <a class="menu__item" href="#">FAQ</a>
+                <a class="menu__item" href="#">Принципы работы</a>
               </li>
               <li>
-                <a class="menu__item" href="#">Contacts</a>
+                <a class="menu__item" href="#FAQ">FAQ</a>
+              </li>
+              <li>
+                <a class="menu__item" href="#">Контакты</a>
               </li>
             </ul>
           </nav>
@@ -131,7 +134,28 @@
           </div>
         </div>
         <div class="container">
-          <div id="comments"></div>
+          <div class="comments-singler-wrapper" id="comments">
+            <div class="main_slider">
+              <div class="single-item">
+                  <div>
+                      <img src="images/comments/comment-1.jpg" alt="" />
+                  </div>
+                  <div>
+                      <img src="images/comments/comment-2.jpg" alt="" />
+                  </div>
+                  <div>
+                      <img src="images/comments/comment-3.jpg" alt="" />
+                  </div>
+              </div>
+              <div id="my-arrow-prev">
+                  <span class="icon-keyboard_arrow_left"></span>
+              </div>
+              <div id="my-arrow-next">
+                  <span class="icon-keyboard_arrow_right"></span>
+              </div>
+          </div>
+        </div>
+          </div>
         </div>
         <div class="container">
           <div class="accordion_wrapper" id="FAQ">
@@ -183,10 +207,53 @@
           <div id="image_full"></div>
         </div>
         <div class="container">
-          <div id="contacts"></div>
+          <div id="contacts">
+            <div class="contacts-info-wrapper"></div>
+            <div class="contacts-form-wrapper">
+              <form action="/" class="decor">
+                <div class="form-left-decoration"></div>
+                <div class="form-right-decoration"></div>
+                <div class="circle"></div>
+                <div class="form-inner">
+                  <h2>Contact us</h2>
+                  <input type="text" placeholder="Username">
+                  <input type="email" placeholder="Email">
+                  <textarea placeholder="Message..." rows="5"></textarea>
+                  <button type="submit" href="/">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </main>
       <footer id="footer"></footer>
     </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script>
+          $(document).ready(function () {
+        $('.single-item').slick({
+            arrows: true,
+            infinite: true,
+            autoplay:true,
+            autoplaySpeed: 3000,
+            slidesToShow: 1,
+            centerMode: true,
+            variableWidth: true,
+            nextArrow: document.querySelector('#my-arrow-next'),
+            prevArrow: document.querySelector('#my-arrow-prev'),
+        });
+    });
+    </script>
+    <script>
+      $(document).ready(function(){
+        $("#main-nav").on("click","a", function (event) {
+            event.preventDefault();
+            var id  = $(this).attr('href'),
+                top = $(id).offset().top;
+            $('body,html').animate({scrollTop: top}, 1500);
+        });
+    });
+</script>
   </body>
 </html>
