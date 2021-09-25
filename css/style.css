@@ -259,7 +259,7 @@ textarea {
   display: grid;
   align-items: center;
   justify-items: center;
-  height: 100%;
+  padding: 40px;
   color: #f4f7f7;
   overflow-x: hidden;
 }
@@ -290,6 +290,7 @@ textarea {
   position: relative; /* for iOS */
   width: 350px;
   padding: 20px;
+  border-radius: 30px;
   color: #586875;
   background-color: #f4f7f7;
   box-shadow: 0 10px 20px #0006;
@@ -377,7 +378,7 @@ textarea {
   background-color: #bdd6d2;
   font-weight: bold;
   font-size: 1.7rem;
-
+  border-radius: 0 0 30px 30px;
   text-align: center;
 }
 
@@ -524,6 +525,34 @@ textarea {
   max-width: 50%;
   width: 100%;
   padding: 30px;
+}
+
+.contacts-info-wrapper {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+.contacts-info-wrapper ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.contacts-info-wrapper li {
+  display: flex;
+  margin: 10px 0;
+}
+
+.contacts-info-wrapper label {
+  margin-left: 20px;
+}
+
+.contacts-info-wrapper a {
+  font-size: 30px;
+  color: #000;
 }
 
 .contacts-form-wrapper h2 {
