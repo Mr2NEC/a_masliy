@@ -456,10 +456,10 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #5b6ceb;
-  font-size: 30px;
-  width: 50px;
-  height: 50px;
+  color: #303f3c;
+  font-size: 25px;
+  width: 40px;
+  height: 40px;
   box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   border: none;
@@ -467,7 +467,7 @@ textarea {
   position: relative;
 }
 .main_slider span:hover {
-  background: #5b6ceb;
+  background: #303f3c;
   color: #ffffff;
 }
 #my-arrow-prev span {
@@ -512,6 +512,18 @@ textarea {
 }
 .tab :checked ~ .tab-content {
   display: block; /* Показываем содержимое */
+}
+
+#image_full {
+  width: 100%;
+}
+
+#image_full div {
+  display: block;
+  position: relative;
+  padding-top: 73%;
+  background-size: cover;
+  overflow: hidden;
 }
 
 #contacts {
@@ -655,6 +667,9 @@ button:hover {
   }
 }
 @media (max-width: 991px) {
+  .card_wrapper {
+    padding: 30px 0;
+  }
 }
 @media (min-width: 768px) {
   .menu__box {
@@ -689,6 +704,16 @@ button:hover {
   }
   .menu__box li {
     padding: 10px 0;
+  }
+  .happy-card,
+  .lovers-card {
+    width: 300px;
+  }
+  .main_slider {
+    width: 90%;
+  }
+  .single-item img {
+    max-width: 100%;
   }
 }
 
