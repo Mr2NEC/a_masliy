@@ -234,16 +234,14 @@ textarea {
   z-index: 1;
 }
 
-.text_wrapper,
-.accordion_wrapper {
+.text_wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.text_container,
-.accordion {
+.text_container {
   width: 100%;
   max-width: 70%;
   text-align: center;
@@ -322,7 +320,283 @@ textarea {
 #lovers-radio:checked ~ .selector .lovers-card {
   animation-name: swing-forwards;
 }
+/* # The Rotating Marker # */
 
+.accordion_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.accordion_wrapper details {
+  width: 100%;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+summary::before {
+  content: "▶";
+  position: absolute;
+  top: 1rem;
+  left: 0.8rem;
+  transform: rotate(0);
+  transform-origin: center;
+  transition: 0.2s transform ease;
+}
+details[open] > summary:before {
+  transform: rotate(90deg);
+  transition: 0.45s transform ease;
+}
+
+/* # The Sliding Summary # */
+details {
+  overflow: hidden;
+}
+details summary {
+  position: relative;
+  z-index: 10;
+}
+@keyframes details-show {
+  from {
+    margin-bottom: -80%;
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+details > *:not(summary) {
+  animation: details-show 500ms ease-in-out;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+  color: transparent;
+  overflow: hidden;
+}
+details[open] > *:not(summary) {
+  color: inherit;
+}
+
+/* # Style 2 # */
+details.style2 summary::before {
+  content: "×";
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1rem;
+  transform: rotate(-45deg);
+  top: 1.2rem;
+  left: 0.5rem;
+}
+details[open].style2 > summary:before {
+  transform: rotate(90deg);
+  color: #f00 !important;
+  transition: color ease 2s, transform ease 1s;
+}
+
+/* # Style 3 # */
+details.style3 summary::before {
+  content: "›";
+  font-size: 2.5rem;
+  line-height: 1rem;
+  top: 1.3rem;
+  left: 0rem;
+  margin: -0.5rem -0.5rem 0 0.5rem;
+  transform-origin: bottom center;
+  transition: margin linear 0.05s;
+}
+details.style3:hover > summary:before {
+  color: #fff;
+}
+details[open].style3 > summary:before {
+  left: 0rem;
+  color: #ccc;
+  transform: rotate(90deg);
+  margin-left: 0.4rem;
+  transition: color ease 2s, transform ease 1s, margin ease 1s;
+}
+@supports (-webkit-touch-callout: none) {
+  details.style3 summary::before {
+    top: 1.6rem;
+  }
+  details[open].style3 > summary:before {
+    top: 1.3rem;
+    transition: all 0.8s;
+  }
+}
+
+/* # Style 4 # */
+details.style4 summary {
+  padding-right: 2.2rem;
+  padding-left: 1rem;
+}
+details.style4 summary::before {
+  content: "×";
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1rem;
+  transform: rotate(-45deg);
+  top: 1.2rem;
+  left: unset;
+  right: 0.6rem;
+}
+details[open].style4 > summary:before {
+  transform: rotate(90deg);
+  color: #f00 !important;
+  transition: color ease 2s, transform ease 1s;
+}
+
+/* # Style 5 # */
+details.style5 summary {
+  padding-right: 2.2rem;
+  padding-left: 1rem;
+}
+details.style5 summary::before {
+  content: "🙈";
+  font-size: 1.5rem;
+  top: 0.5rem;
+  left: unset;
+  right: 0.5rem;
+  transform: rotate(0);
+}
+details.style5:hover > summary::before {
+  content: "🙊";
+}
+details[open].style5 > summary::before {
+  content: "🐵";
+  transform: rotate(0deg);
+}
+details[open].style5 > summary:hover::before {
+  content: "🙉";
+}
+details .monkey-see {
+  display: inline;
+}
+details .monkey-hide {
+  display: none;
+}
+details[open] .monkey-see {
+  display: none;
+}
+details[open] .monkey-hide {
+  display: inline;
+}
+
+/* # Style 6 # */
+details.style6 summary {
+  padding-right: 2.2rem;
+  padding-left: 1rem;
+}
+details.style6 summary::before {
+  content: "❔";
+  font-size: 1.5rem;
+  top: 0.5rem;
+  left: unset;
+  right: 0.5rem;
+  transform: rotate(0);
+}
+details.style6:hover > summary:before {
+  content: "👁️‍🗨️";
+}
+details[open].style6 > summary:before {
+  content: "❌";
+  transform: rotate(0deg);
+}
+
+/* # Style 7 # */
+details.style7 summary {
+  padding-left: 3rem;
+}
+details[open].style7 summary,
+details.style7:hover summary {
+  background: #000;
+  color: #ccc;
+}
+details[open].style7 summary strong,
+details.style7:hover summary strong {
+  color: #fdce4c;
+}
+details.style7:hover summary strong {
+  color: #ffdf87;
+}
+details.style7 summary::before {
+  content: "🌑";
+  font-size: 1.5rem;
+  top: 0.5rem;
+  left: 0.5rem;
+  transform: rotate(0);
+}
+details.style7:hover > summary::before {
+  content: "🌕";
+}
+details[open].style7 > summary::before {
+  content: "🌕";
+  transform: rotate(0deg);
+}
+details[open].style7 > summary:hover::before {
+  content: "🌕";
+}
+details .moon-new {
+  display: inline;
+}
+details .moon-full {
+  display: none;
+}
+details[open] .moon-new {
+  display: none;
+}
+details[open] .moon-full {
+  display: inline;
+}
+details.style7 .content {
+  background: #ddd;
+}
+
+/* # Just Some Pretty Styles # */
+body {
+  font-family: "Open Sans", sans-serif;
+  padding-bottom: 400px;
+}
+img {
+  max-width: 100%;
+}
+p {
+  margin: 0;
+  padding-bottom: 10px;
+}
+p:last-child {
+  padding: 0;
+}
+details {
+  max-width: 500px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  background: white;
+}
+summary {
+  border: 4px solid transparent;
+  outline: none;
+  padding: 1rem;
+  display: block;
+  background: #666;
+  color: white;
+  padding-left: 2.2rem;
+  position: relative;
+  cursor: pointer;
+}
+details[open] summary,
+summary:hover {
+  color: #ffca28;
+  background: #444;
+}
+summary:hover strong,
+details[open] summary strong,
+summary:hover::before,
+details[open] summary::before {
+  color: #ffa128;
+}
+.content {
+  padding: 10px;
+  border: 2px solid #888;
+  border-top: none;
+}
 @keyframes swing-forwards {
   0% {
     z-index: 1; /* start behind other card */
@@ -475,43 +749,6 @@ textarea {
 }
 #my-arrow-next span {
   right: 50%;
-}
-
-.tab input,
-.tab-content {
-  display: none;
-}
-.tab {
-  font: 0.8rem/1.2 Arial, sans-serif; /* Параметры шрифта */
-  border: 1px solid #e9eaec; /* Параметры рамки */
-  border-radius: 3px; /* Скругляем уголки */
-  color: #848994; /* Цвет текста */
-  margin-bottom: 10px; /* Расстояние между пунктами */
-}
-.tab-title {
-  padding: 10px; /* Поля вокруг текста */
-  display: block; /* Блочный элемент */
-  text-transform: uppercase; /* Все буквы заглавные */
-  font-weight: bold; /* Жирное начертание */
-  cursor: pointer; /* Вид курсора */
-}
-.tab-title::after {
-  content: "+"; /* Выводим плюс */
-  float: right; /* Размещаем по правому краю */
-}
-.tab-content {
-  padding: 10px 20px; /* Поля вокруг текста */
-}
-.tab :checked + .tab-title {
-  background-color: #50a2de; /* Цвет фона */
-  border-radius: 3px 3px 0 0; /* Скругляем уголки */
-  color: #fff; /* Цвет текста */
-}
-.tab :checked + .tab-title::after {
-  content: "−"; /* Выводим минус */
-}
-.tab :checked ~ .tab-content {
-  display: block; /* Показываем содержимое */
 }
 
 #image_full {
